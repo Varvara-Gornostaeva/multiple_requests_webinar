@@ -13,9 +13,9 @@ def get_result(num):
 
 
 time_start = datetime.now()
-with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
     futures = []
-    for _ in range(8):
+    for _ in range(1):
         futures.append(executor.submit(get_result, 100000))
 
     for future in concurrent.futures.as_completed(futures):
