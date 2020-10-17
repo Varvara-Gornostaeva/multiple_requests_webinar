@@ -29,4 +29,3 @@ def index(request):
 
     print(response_str)
     return HttpResponse(response_str)
-
