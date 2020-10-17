@@ -3,7 +3,8 @@ import requests
 import concurrent.futures
 import time
 
-url = 'http://localhost:8000/'
+# url = 'http://localhost:8000/'
+url = 'http://84.201.174.11/'
 
 
 def get_result(num):
@@ -14,7 +15,7 @@ def get_result(num):
 time_start = datetime.now()
 with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
     futures = []
-    for _ in range(1):
+    for _ in range(6):
         futures.append(executor.submit(get_result, 100000))
 
     for future in concurrent.futures.as_completed(futures):
